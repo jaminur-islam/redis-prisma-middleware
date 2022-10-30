@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2016", // all code convert es5 version
+    "module": "Commonjs", // all frontend and backend all supported
+    "declaration": true, // show all method in the object all other method
+    "outDir": "./lib",  // build code store
+    "strict": true,
+  },
+  "include": ["src"], // compile inside src folder
+  "exclude": ["node_modules" , "**/__test__/*"] // ignore this file to compile 
+}
+
