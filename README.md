@@ -1,4 +1,4 @@
-# redis-cache-handler-middleware
+# redis-prisma-middleware
 
 
 ## Features
@@ -53,7 +53,7 @@ The cache data of the model which calls these functions will be deleted automati
 Install the package using `npm`:
 
 ```sh
-npm i redis-cache-handler-middleware
+npm i redis-prisma-middleware
 ```
 
 ## Code Example 
@@ -87,7 +87,7 @@ And the second parameter is the redis client. You must pass these 2 parameters
 const redis = require("redis");
 const redisUrl = "6379";
 const client = redis.createClient(redisUrl);
-const { prismaRedisCacheHandler } = require("redis-cache-handler-middleware");
+const { prismaRedisCacheHandler } = require("redis-prisma-middleware");
 client.connect();
 
 // prisma configure
