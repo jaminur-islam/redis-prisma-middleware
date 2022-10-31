@@ -1,29 +1,11 @@
 import { createClient } from 'redis';
+import {queryMethods} from "./cacheMethods"
+import {mutationMethods} from "./cacheMethods"
 
 export type RedisClientType = ReturnType<typeof createClient>;
 
 export const prismaRedisCacheHandler = (validation:number = 0, client:any ,showConsole: boolean = false) => {
-  const queryMethods: string[] = [
-    "findUnique",
-    "findFirst",
-    "findMany",
-    "count",
-    "aggregate",
-    "groupBy",
-    "findRaw",
-    "aggregateRaw",
-  ];
-
-  const mutationMethods: string[] = [
-    "create",
-    "createMany",
-    "update",
-    "updateMany",
-    "upsert",
-    "delete",
-    "deleteMany",
-    "executeRawUnsafe",
-  ];
+ 
 
   return async function redisCacheHandler(params:any, next:any ) {
     let action = params.action;
