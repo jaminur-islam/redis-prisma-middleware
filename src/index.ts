@@ -5,8 +5,6 @@ import {mutationMethods} from "./cacheMethods"
 export type RedisClientType = ReturnType<typeof createClient>;
 
 export const prismaRedisCacheHandler = (validation:number = 0, client:any ,showConsole: boolean = false) => {
- 
-
   return async function redisCacheHandler(params:any, next:any ) {
     let action = params.action;
     if (queryMethods?.includes(action)) {
