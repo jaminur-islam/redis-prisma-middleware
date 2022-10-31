@@ -7,6 +7,6 @@
     "strict": true,
   },
   "include": ["src"], // compile inside src folder
-  "exclude": ["node_modules" , "**/__test__/*"] // ignore this file to compile 
+  "exclude": ["node_modules" ,"examples", "**/__test__/*"] // ignore this file to compile 
 }
 

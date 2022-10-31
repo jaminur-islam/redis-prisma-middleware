@@ -1,0 +1,43 @@
+terborepo monorepo fullstack project deploy
+https://www.youtube.com/playlist?list=PLhP23RlR2j5fshtoZwGWxAQxy9xdwd-WS
+
+// middleware array hisabe deya zay se khetre zodi samner middleware ta async hoy r tar vitore zodi kono error hoy tahole setake porer middleware handle korbe 
+like
+app.get('/' , [(req ,res , next)=>{
+  fs.readFile("/file/ww" , (err , data)=>{
+   next(err)
+  })},
+  (req ,res , next)=>{
+    console.log(data.property)
+  }
+])
+
+withAuth
+https://dev.to/shubhamverma/implement-protected-routes-in-nextjs-37ml
+
+ 
+========================= Redis cli command ==================================
+ =============== set and get and del ====================
+1. set korar jonno set(key, value , Ex [value kotokhon thakbe seta])
+2. get korar jonno get(key) return a promise;
+3. del delete korar jonno
+ =============== setex ============================
+4.(keys *) exists key [key ase kina check korte ]
+4.(setex(key , time , value)) key validation time set 
+5.[ expire(key , 10) ] after set value then i can set validation time in my key 
+6. ttl(key) see validation time in the key
+  =============== list push remove ====================
+7. lpush(key , john) set list of value 
+8.[list push start side (lpush) and list push end side (rpush)]
+10.[list remove start (lpop) and remove last item in the list (rpop) ]
+10. lrange(friends 0 -1) get list of value 
+  =============== sadd unique Value add =================
+11. sadd(key , value) sadd it is set always unique value 
+12. (smembers(key)) see sadd list to use 
+13. remove sadd value to use (srem(key , "weight lifting"))
+  =============== Hset nested object set ==================
+14. Hset use to nested value set on redis (Hset(mainKey , key , value))
+15. get Hset value Hset(mainKey, key);
+16. delete Hset hdel(mainKey , key)
+17.check Hset is already exits or not use (Hexists mainkey , key)
+18. getAll Hset (Hgetall(mainKey))

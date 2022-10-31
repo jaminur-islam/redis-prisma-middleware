@@ -1,29 +1,11 @@
 import { createClient } from 'redis';
+import {mutationMethods} from "./cacheMethods"
+import {queryMethods} from "./cacheMethods"
 
 export type RedisClientType = ReturnType<typeof createClient>;
 
 export const prismaRedisCacheHandler = (validation:number = 0, client:any) => {
-  const queryMethods: string[] = [
-    "findUnique",
-    "findFirst",
-    "findMany",
-    "count",
-    "aggregate",
-    "groupBy",
-    "findRaw",
-    "aggregateRaw",
-  ];
-
-  const mutationMethods: string[] = [
-    "create",
-    "createMany",
-    "update",
-    "updateMany",
-    "upsert",
-    "delete",
-    "deleteMany",
-    "executeRawUnsafe",
-  ];
+  
 
   return async function redisCacheHandler(params:any, next:any) {
     let action = params.action;
@@ -33,7 +15,7 @@ export const prismaRedisCacheHandler = (validation:number = 0, client:any) => {
         console.log("data form redis");
         return cached;
       } else {
-        const result = await next(params);
+        const result:any = await next(params);
         client.set(JSON.stringify(params), JSON.stringify(result));
         validation > 0 && client.expire(JSON.stringify(params), validation);
         return result;

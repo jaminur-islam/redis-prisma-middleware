@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sb {
+  border: 1px solid red;
+}
+
+.myHeading {
+  color: red;
+}
