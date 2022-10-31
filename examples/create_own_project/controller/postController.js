@@ -18,7 +18,6 @@ async function createPost(req, res, next) {
 }
 
 async function getAllUserPost(req, res, next) {
-  console.log("this data postgresql");
   try {
     const userAllPost = await db.post.findMany({
       where: {

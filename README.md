@@ -80,7 +80,8 @@ Router.delete("/post",cacheHandler, deletePost)
 ## cacheHandler middleware code example
 
 First you need to configure the Redis client. After that the prisma client needs to be configured. Then the [prismaRedisCacheHandler] function must be used inside the [cacheHandler] middleware. This function takes 2 parameters. The first parameter is if you want to set the invalidation time of a model, then you have to give any number above 0. This number will be counted in seconds. After that fixed time, the cache will be removed. And if 0 then no invalidation time will be set.
-And the second parameter is the redis client. You must pass these 2 parameters
+And the second parameter is the redis client. You must pass these 2 parameters.
+[If you want to see where the data is coming from, pass (true )as the third parameter. This is an optional parameter
 
 ```js
 // redis configure
@@ -95,7 +96,7 @@ const { PrismaClient } = require("@prisma/client");
 const db = new PrismaClient();
 
 async function cacheHandler(req, res, next) {
-  await prisma.$use(prismaRedisCacheHandler(0, client));
+  await prisma.$use(prismaRedisCacheHandler(0, client, true));
   next();
 }
 
