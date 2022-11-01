@@ -1,4 +1,3 @@
-import { createClient } from 'redis';
 import {queryMethods} from "./cacheMethods"
 import {mutationMethods} from "./cacheMethods"
 

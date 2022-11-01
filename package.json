@@ -1,6 +1,6 @@
 {
   "name": "redis-prisma-middleware",
-  "version": "1.3.0",
+  "version": "1.6.0",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -13,7 +13,11 @@
     "url": "git+https://github.com/jaminur-islam/redis-prisma-middleware.git"
   },
   "keywords": [
-    "prisma-middleware redis-cache prisma-cache remove-cache-redis "
+    "prisma-middleware",
+    "redis-cache",
+    "prisma-cache",
+    "redis-remove-cache",
+    "redis-handler"
   ],
   "author": "jaminur islam",
   "license": "ISC",
@@ -27,8 +31,5 @@
   "devDependencies": {
     "@types/node": "^18.11.7",
     "typescript": "^4.8.4"
-  },
-  "dependencies": {
-    "redis": "^4.3.1"
   }
 }
